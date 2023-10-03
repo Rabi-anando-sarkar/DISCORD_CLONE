@@ -137,13 +137,13 @@ model Conversation {
 model DirectMessage {
   id String @id @default(uuid())
   content String @db.Text
-  flieUrl String @db.Text
+  fileUrl String @db.Text
 
   memberId String
   member Member @relation(fields: [memberId], references: [id], onDelete: Cascade)
 
   conversationId String
-  converation Conversation @relation(fields: [conversationId], references: [id], onDelete: Cascade)
+  conversation Conversation @relation(fields: [conversationId], references: [id], onDelete: Cascade)
   
   deleted Boolean @default(false)
 
